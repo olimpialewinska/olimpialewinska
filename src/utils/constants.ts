@@ -7,6 +7,7 @@ export const projects = [
     image:
       "https://user-images.githubusercontent.com/100933608/250806425-ed3c2fea-5ecc-4346-ae2b-5283de2b0e50.png",
     link: "/wee",
+    stack: ["Next.js", "TypeScript", "Styled Components", "Supabase"],
   },
   {
     id: 2,
@@ -15,14 +16,21 @@ export const projects = [
       "ChatLight is a desktop application built with Electron and TypeScript that enables seamless conversations using GPT (Generative Pre-trained Transformer). This chat application allows users to input prompts not only through text but also by extracting prompts from images. ChatLight, is always at your fingertips, as it can be launched quickly using the keyboard shortcut Ctrl/Cmd+M.",
     image: "/chatlight.png",
     link: "/chatlight",
+    stack: ["Electron", "TypeScript", "Styled Components", "GPT"],
   },
   {
     id: 3,
     title: "Elernink",
     description:
       "This project is an e-learning portal that allows users to create and access courses, create notes, and store files. The portal is built using Next.js and uses Supabase as its database.",
-    image:
-      "https://user-images.githubusercontent.com/100933608/241323953-82393773-87f1-4580-b18b-41c1c24be549.png",
+    image: "/elernink.png",
     link: "/elernink",
+    stack: [
+      "Next.js",
+      "React Native",
+      "TypeScript",
+      "Styled Components",
+      "Supabase",
+    ],
   },
 ];

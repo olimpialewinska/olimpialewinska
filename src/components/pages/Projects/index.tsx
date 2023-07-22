@@ -35,6 +35,7 @@ export const Projects = observer(() => {
             description={project.description}
             title={project.title}
             link={project.link}
+            stack={project.stack}
           />
         ))}
       </Container>

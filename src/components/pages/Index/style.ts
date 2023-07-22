@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 
 export const IndexContainer = styled.div`
@@ -9,6 +10,7 @@ export const IndexContainer = styled.div`
   @media (max-width: 786px) {
     width: 100%;
     height: calc(100vh - 60px);
+    margin-top: 0;
   }
 `;
 
@@ -37,6 +39,7 @@ export const Content = styled.div`
   flex: 1;
   transform: translateX(16px) rotateX(-10deg) rotateY(10deg);
   z-index: 2;
+  margin-right: 4px;
 
   @media (max-width: 1024px) {
     flex: 1;
@@ -57,7 +60,7 @@ export const ContentTitle = styled.h1`
 
 export const ContentDescription = styled.p`
   color: white;
-  margin-top: 70px;
+  margin-top: 30px;
 
   @media (max-width: 1024px) {
     margin-top: 50px !important;

@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 
 export const Title = styled.div`
@@ -7,4 +8,9 @@ export const Title = styled.div`
   opacity: 0.6;
   text-transform: uppercase;
   letter-spacing: 6px;
+
+  @media (max-width: 512px) {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
 `;

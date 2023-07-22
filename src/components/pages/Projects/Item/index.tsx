@@ -1,6 +1,6 @@
 "use client";
 import { observer } from "mobx-react-lite";
-import { Row, Image, Text, Wrapper, Title } from "./style";
+import { Row, Image, Text, Wrapper, Title, Buttons, Button } from "./style";
 import { store } from "@/stores";
 import { useTranslation } from "@/app/i18n/client";
 import { useRouter } from "next/navigation";
@@ -11,6 +11,7 @@ interface RowProps {
   link: string;
   title?: string;
   id: number;
+  stack?: string[];
 }
 
 export const Item = observer((props: RowProps) => {
@@ -31,7 +32,16 @@ export const Item = observer((props: RowProps) => {
       />
       <Wrapper>
         <Title>{props.title}</Title>
-        <Text>{t(`project-${props.id}`)}</Text>
+        <Text theme={store.theme.currentTheme}>{t(`project-${props.id}`)}</Text>
+        {props.stack && (
+          <Buttons>
+            {props.stack.map((item) => (
+              <Button key={item} theme={store.theme.currentTheme}>
+                {item}
+              </Button>
+            ))}
+          </Buttons>
+        )}
       </Wrapper>
     </Row>
   );
