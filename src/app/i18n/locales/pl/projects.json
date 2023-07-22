@@ -1,3 +1,6 @@
 {
-    "title": "Projekty"
+    "title": "Projekty",
+    "project-1": "Wee to internetowa aplikacja komunikatora internetowego, która umożliwia tworzenie zarówno rozmów jeden na jednego, jak i rozmów grupowych. Zapewnia szeroki zakres funkcji zwiększających wygodę przesyłania wiadomości, w tym wiadomości w czasie rzeczywistym obsługiwane przez Supabase Realtime. Dzięki Wee możesz także dostosować kolory czatu, zmienić pseudonimy uczestników czatu oraz wysyłać zdjęcia i pliki",
+    "project-2": "Witaj w aplikacji do zarządzania zadaniami, która umożliwia tworzenie zadań, przypisywanie ich do użytkowników i śledzenie ich postępu. Dzięki tej aplikacji możesz zarządzać swoimi zadaniami, a także zarządzać zadaniami innych użytkowników. Aplikacja ta jest obsługiwana przez Supabase Realtime, dzięki czemu możesz śledzić postęp zadań w czasie rzeczywistym.",
+    "project-3": "Witaj w aplikacji do zarządzania zadaniami, która umożliwia tworzenie zadań, przypisywanie ich do użytkowników i śledzenie ich postępu. Dzięki tej aplikacji możesz zarządzać swoimi zadaniami, a także zarządzać zadaniami innych użytkowników. Aplikacja ta jest obsługiwana przez Supabase Realtime, dzięki czemu możesz śledzić postęp zadań w czasie rzeczywistym."
 }

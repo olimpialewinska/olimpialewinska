@@ -8,13 +8,12 @@ import {
   Wrapper,
   Icon,
   MobileItem,
-  Button,
 } from "./style";
 import { store } from "@/stores";
 import { useTranslation } from "@/app/i18n/client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SettingsElement } from "./Settings";
 
 const navigationItems = [
@@ -37,12 +36,35 @@ const navigationItems = [
 
 export const Navbar = observer(() => {
   const [isOpen, setIsOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
   const pathname = usePathname();
   const language = store.language.currentLanguage;
   const { t } = useTranslation(store.language.currentLanguage, "navbar");
 
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY < 50) {
+      setVisible(true);
+      return;
+    }
+
+    if (currentScrollY > 50) {
+      setVisible(false);
+      return;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Wrapper>
+    <Wrapper style={{ display: visible ? "" : "none" }}>
       <Link href={`/${store.language.currentLanguage}`}>
         <Logo
           style={{

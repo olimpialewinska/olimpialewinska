@@ -20,5 +20,7 @@ export class Theme {
 
   public setTheme(theme: "dark" | "light") {
     this.currentTheme = theme;
+    document.body.style.backgroundColor =
+      this.currentTheme === "dark" ? "#242526" : "#fff";
   }
 }

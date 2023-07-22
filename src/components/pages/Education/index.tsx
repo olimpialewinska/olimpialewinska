@@ -11,14 +11,13 @@ import { useEffect, useState } from "react";
 export const Education = observer(() => {
   const { t } = useTranslation(store.language.currentLanguage, "education");
   const theme: "dark" | "light" = store.theme.currentTheme;
-  console.log(store.theme.currentTheme);
 
   useEffect(() => {
-    document.title = "Olimpia Lewińska - Education";
+    document.title = `Olimpia Lewińska - ${t("title")}`;
     return () => {
       document.title = "Olimpia Lewińska";
     };
-  }, [store.theme.currentTheme]);
+  }, [t]);
 
   const items = [
     {

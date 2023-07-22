@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
 export const IndexContainer = styled.div`
-  margin-top: 0;
-  height: 100%;
-  width: 100%;
+  margin-top: -60px;
   display: flex;
   justify-content: center;
   perspective: 600px;
 
-  @media (max-width: 1024px) {
-    width: 100% !important;
-    margin-top: 0 !important;
+  @media (max-width: 786px) {
+    width: 100%;
+    height: calc(100vh - 60px);
   }
 `;
 
@@ -20,7 +18,7 @@ export const IndexCard = styled.div`
   background: linear-gradient(#4776e6, #8e54e9);
   margin-top: 32px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     width: 100% !important;
     margin-top: 0 !important;
     padding: 24px !important;

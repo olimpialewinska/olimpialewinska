@@ -42,7 +42,10 @@ export const Index = observer(() => {
   }, []);
 
   return (
-    <Bg theme={theme}>
+    <Bg
+      theme={theme}
+      style={{ alignItems: "center", justifyContent: "center" }}
+    >
       <Navbar />
       <IndexContainer>
         <IndexCard>

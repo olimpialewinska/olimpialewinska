@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   top: 0;
   padding: 0 20px;
   z-index: 100;
+  transition: 0.6s all;
 `;
 
 export const Container = styled.div`
