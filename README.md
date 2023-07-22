@@ -1,7 +1,7 @@
 <div id="header" align="center">
 <h3 align=”center”> Hi there, I’m Olimpia 👋 </h3>
 
-[![My portfolio page](https://img.shields.io/badge/My%20portfolio%20page-37a779?style=for-the-badge)](https://olimpialewinska.vercel.app/pl)
+[![My portfolio page](https://img.shields.io/badge/My%20portfolio%20page-37a779?style=for-the-badge)](https://olimpialewinska.vercel.app/en)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/olimpialewinska/)
 
 </div>
