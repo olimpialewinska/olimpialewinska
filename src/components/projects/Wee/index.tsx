@@ -14,11 +14,10 @@ import {
 } from "@/components/styles";
 import { store } from "@/stores";
 import { observer } from "mobx-react-lite";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import Link from "next/link";
 import { Slider } from "../Slider";
-import { Button, Buttons } from "@/components/pages/Projects/Item/style";
-import { features, images, stack } from "./constants";
+import { githubLink, images, link, stack } from "./constants";
 import { Technology } from "../Technology";
 import { Features } from "../Features";
 
@@ -32,6 +31,8 @@ export const Wee = observer(() => {
       document.title = "Olimpia Lewińska";
     };
   }, [t]);
+
+  const handleDemoClick = useCallback(() => {}, []);
 
   return (
     <Bg theme={theme}>
@@ -47,32 +48,25 @@ export const Wee = observer(() => {
           </Wrapper>
 
           <Slider images={images} />
-          <Description>
-            Wee is a web-based internet messenger application that allows you to
-            create both one-on-one conversations and group conversations. It
-            provides a wide range of features to enhance your messaging
-            experience, including real-time messaging powered by Supabase
-            Realtime. With Wee, you can also customize the chat colors, change
-            nicknames of participants in the chat, and send photos and files.
-            provides a wide range of features to enhance your messaging
-            experience, including real-time messaging powered by Supabase
-            Realtime. With Wee, you can also customize the chat colors, change
-            nicknames of participants in the chat, and send photos and files.
-          </Description>
+          <Description>{t("description")}</Description>
         </LargerColumn>
         <SmallerColumn>
           <Technology stack={stack} />
-          <Features features={features} />
+          <Features project="wee" />
           <div style={{ flex: 1 }}></div>
-          <RectangularButton
-            theme={store.theme.currentTheme}
-            style={{ marginBottom: 10, marginTop: 10 }}
-          >
-            Demo
-          </RectangularButton>
-          <RectangularButton theme={store.theme.currentTheme}>
-            Github
-          </RectangularButton>
+          <Link href={link} target="_blank">
+            <RectangularButton
+              theme={store.theme.currentTheme}
+              style={{ marginBottom: 10, marginTop: 10 }}
+            >
+              Demo
+            </RectangularButton>
+          </Link>
+          <Link href={githubLink} target="_blank">
+            <RectangularButton theme={store.theme.currentTheme}>
+              Github
+            </RectangularButton>
+          </Link>
         </SmallerColumn>
       </Background>
     </Bg>

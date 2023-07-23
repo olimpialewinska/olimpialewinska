@@ -18,7 +18,9 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { Buttons, Button } from "@/components/pages/Projects/Item/style";
 import { Slider } from "../Slider";
-import { images, stack } from "../Wee/constants";
+import { Features } from "../Features";
+import { Technology } from "../Technology";
+import { githubLink, images, link, mobile, stack } from "./constants";
 
 export const Elernink = observer(() => {
   const { t } = useTranslation(store.language.currentLanguage, "elernink");
@@ -45,79 +47,33 @@ export const Elernink = observer(() => {
           </Wrapper>
 
           <Slider images={images} />
-          <Description>
-            Wee is a web-based internet messenger application that allows you to
-            create both one-on-one conversations and group conversations. It
-            provides a wide range of features to enhance your messaging
-            experience, including real-time messaging powered by Supabase
-            Realtime. With Wee, you can also customize the chat colors, change
-            nicknames of participants in the chat, and send photos and files.
-            provides a wide range of features to enhance your messaging
-            experience, including real-time messaging powered by Supabase
-            Realtime. With Wee, you can also customize the chat colors, change
-            nicknames of participants in the chat, and send photos and files.
-          </Description>
+          <Description>{t("description")}</Description>
         </LargerColumn>
         <SmallerColumn>
-          <H2 style={{ marginBottom: 10 }}>Technology</H2>
-          <Buttons style={{ width: "100%" }}>
-            {stack.map((item) => (
-              <Button theme={store.theme.currentTheme} key={item}>
-                {item}
-              </Button>
-            ))}
-          </Buttons>
-          <H2 style={{ marginTop: 20, marginBottom: 10 }}>Features</H2>
-          <Buttons
-            style={{
-              width: "100%",
-              overflowY: "auto",
-              marginBottom: 10,
-              minHeight: 100,
-            }}
-          >
-            {stack.map((item) => (
-              <Button theme={store.theme.currentTheme} key={item}>
-                {item}
-              </Button>
-            ))}
-
-            {stack.map((item) => (
-              <Button theme={store.theme.currentTheme} key={item}>
-                {item}
-              </Button>
-            ))}
-            {stack.map((item) => (
-              <Button theme={store.theme.currentTheme} key={item}>
-                {item}
-              </Button>
-            ))}
-            {stack.map((item) => (
-              <Button theme={store.theme.currentTheme} key={item}>
-                {item}
-              </Button>
-            ))}
-            {stack.map((item) => (
-              <Button theme={store.theme.currentTheme} key={item}>
-                {item}
-              </Button>
-            ))}
-            {stack.map((item) => (
-              <Button theme={store.theme.currentTheme} key={item}>
-                {item}
-              </Button>
-            ))}
-          </Buttons>
+          <Technology stack={stack} />
+          <Features project="elernink" />
           <div style={{ flex: 1 }}></div>
-          <RectangularButton
-            theme={store.theme.currentTheme}
-            style={{ marginBottom: 10 }}
-          >
-            Demo
-          </RectangularButton>
-          <RectangularButton theme={store.theme.currentTheme}>
-            Github
-          </RectangularButton>
+          <Link href={link} target="_blank">
+            <RectangularButton
+              theme={store.theme.currentTheme}
+              style={{ marginBottom: 10 }}
+            >
+              Demo
+            </RectangularButton>
+          </Link>
+          <Link href={githubLink} target="_blank">
+            <RectangularButton
+              theme={store.theme.currentTheme}
+              style={{ marginBottom: 10 }}
+            >
+              Github
+            </RectangularButton>
+          </Link>
+          <Link href={mobile} target="_blank">
+            <RectangularButton theme={store.theme.currentTheme}>
+              Mobile - Github
+            </RectangularButton>
+          </Link>
         </SmallerColumn>
       </Background>
     </Bg>

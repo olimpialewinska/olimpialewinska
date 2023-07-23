@@ -1,3 +1,12 @@
 {
-    "title": "ChatLight"
+    "title": "ChatLight",
+    "description": "ChatLight is a desktop application built with Electron and TypeScript, using the React library, enabling smooth conversations using GPT. This chat application allows users to input commands not only through text but also by extracting information from images. ChatLight is always at your fingertips, as it can be quickly launched using the keyboard shortcut Ctrl/Cmd+M. The application allows users to create multiple chat sessions and navigate between them using tab-like cards, similar to a web browser. ChatLight utilizes a Node.js server, which interacts with the GPT API and Google Cloud API for text extraction from images.",
+    "features": [
+        "Intuitive user interface for easy navigation",
+        "Customizable chat appearance",
+        "Quick chat creation",
+        "Integration with GPT API",
+        "Utilizing Google Cloud API for text extraction from images",
+        "Keyboard shortcuts for quick access"
+        ]
 }

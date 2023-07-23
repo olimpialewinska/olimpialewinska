@@ -9,6 +9,8 @@ export const stack = [
   "Supabase",
 ];
 
-export const link = "https://wee-nine.vercel.app/";
+export const link = "https://elernink.vercel.app/";
 
-export const githubLink = "https://github.com/olimpialewinska/wee";
+export const githubLink = "https://github.com/olimpialewinska/elernink";
+
+export const mobile = "https://github.com/olimpialewinska/ElerninkMobile";

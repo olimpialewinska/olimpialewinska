@@ -1,20 +1,13 @@
+"use client";
 import styled from "styled-components";
 
-export const Buttons = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  font-size: 12px;
-  flex-wrap: nowrap;
-  margin-bottom: 10px;
-  width: 100%;
-  overflow-y: auto;
-  min-height: 100px;
+export const List = styled.ul`
+  margin-left: 14px;
+  margin-top: 8px;
+`;
 
-  @media (max-width: 1020px) {
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+export const Item = styled.li`
+  margin-bottom: 10px;
+  line-height: 1.2;
+  opacity: 0.7;
 `;

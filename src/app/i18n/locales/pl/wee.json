@@ -1,3 +1,13 @@
 {
-    "title": "Wee"
+    "title": "Wee",
+    "description": "Wee to aplikacja internetowa typu messenger, umożliwiająca tworzenie rozmów zarówno jednoosobowych, jak i grupowych. Oferuje szeroki zakres funkcji, które poprawiają doświadczenie w korzystaniu z komunikacji, w tym rzeczywistą wymianę wiadomości dzięki Supabase Realtime. Można dostosowywać kolory czatu, zmieniać pseudonimy uczestników rozmów oraz wysyłać zdjęcia i pliki.",
+    "features":
+    [
+        "Tworzenie rozmów jednoosobowych i grupowych",
+        "Wymiana wiadomości w czasie rzeczywistym",
+        "Wysyłanie zdjęć i plików",
+        "Dostosowywanie kolorów czatu",
+        "Zmiana pseudonimów uczestników rozmów"
+        
+    ]
 }

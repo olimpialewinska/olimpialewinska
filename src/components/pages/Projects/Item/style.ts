@@ -1,5 +1,4 @@
 "use client";
-import { t } from "i18next";
 import styled from "styled-components";
 
 interface ImageProps {
@@ -35,15 +34,15 @@ export const Image = styled.div<ImageProps>`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 260px;
-  width: 410px;
+  min-height: 260px;
+  min-width: 410px;
   margin: 20px;
   margin-right: 0;
   border-radius: 6px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   @media (max-width: 768px) {
-    height: 180px;
-    width: 90%;
+    min-height: 180px;
+    min-width: 90%;
     margin-right: 20px;
   }
 `;
@@ -76,10 +75,11 @@ export const Title = styled.div`
 `;
 
 export const Text = styled.div<{ theme: "dark" | "light" }>`
+  flex: 1;
+  max-width: 100%;
   margin-bottom: 14px;
+  display: flex;
   overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
   color: ${({ theme }) =>
     theme === "dark" ? "rgba(255, 255, 255, 0.4)" : "rgba(0, 0, 0, 0.4)"};
 

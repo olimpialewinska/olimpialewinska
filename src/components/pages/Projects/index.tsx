@@ -32,7 +32,6 @@ export const Projects = observer(() => {
             key={project.id}
             id={project.id}
             image={project.image}
-            description={project.description}
             title={project.title}
             link={project.link}
             stack={project.stack}

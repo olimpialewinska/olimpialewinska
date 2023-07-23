@@ -1,3 +1,12 @@
 {
-    "title": "Wee"
+    "title": "Wee",
+    "description": "Wee is a web-based internet messenger application that allows you to create both one-on-one conversations and group conversations. It provides a wide range of features to enhance your messaging experience, including real-time messaging powered by Supabase Realtime. With Wee, you can also customize the chat colors, change nicknames of participants in the chat, and send photos and files.",
+    "features":
+            [
+                "Creating one-on-one and group conversations",
+                "Real-time messaging",
+                "Sending photos and files",
+                "Customizing chat colors",
+                "Changing chat participants' pseudonyms"
+            ]
 }

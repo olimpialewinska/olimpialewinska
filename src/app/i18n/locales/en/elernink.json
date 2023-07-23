@@ -1,3 +1,11 @@
 {
-    "title": "Elernink"
+    "title": "Elernink",
+    "description": "E-learning portal that allows users to create and access courses, create notes, and store files. The portal is built using Next.js and uses Supabase as its database. Additionally, the API developed for this project is also utilized in the mobile version of the portal, which is built using React Native.",
+    "features":
+    [
+        "Ability to create and access courses",
+        "Notes creation",
+        "File storage",
+        "Mobile version of the portal"
+    ]
 }

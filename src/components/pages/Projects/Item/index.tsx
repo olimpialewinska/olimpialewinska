@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 
 interface RowProps {
   image?: string;
-  description?: string;
   link: string;
   title?: string;
   id: number;

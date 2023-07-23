@@ -76,6 +76,7 @@ export const Background = styled.div`
   margin-top: 10px;
   height: calc(100vh - 70px);
   max-width: 1800px;
+  max-height: 1220px;
 
   @media (max-width: 1020px) {
     flex-direction: column;
@@ -109,7 +110,7 @@ export const SmallerColumn = styled.div`
   padding-top: 10px;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   @media (max-width: 1020px) {
     width: 100%;
@@ -132,10 +133,10 @@ export const Description = styled.p`
   padding-right: 40px;
   padding-left: 40px;
   padding-top: 20px;
-  padding-bottom: 20px;
   opacity: 0.8;
   overflow-y: auto;
   margin-top: -40px;
+  line-height: 1.4;
 
   @media (max-width: 1020px) {
   }
@@ -143,5 +144,6 @@ export const Description = styled.p`
   @media (max-width: 512px) {
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 20px;
   }
 `;
