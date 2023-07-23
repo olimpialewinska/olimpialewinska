@@ -67,7 +67,7 @@ export const ContentDescription = styled.p`
   }
 `;
 
-export const Button = styled.a`
+export const Button = styled.div`
   padding: 12px 24px;
   transition: 0.2s background-color, 0.2s border;
   cursor: pointer;
