@@ -6,6 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "@/app/i18n/client";
 import { useCookies } from "react-cookie";
 import { useRouter } from "next/navigation";
+import { createQueryString } from "@/utils/functions/createURL";
 
 export const SettingsElement = observer(() => {
   const { t } = useTranslation(store.language.currentLanguage, "navbar");
@@ -14,12 +15,6 @@ export const SettingsElement = observer(() => {
   const router = useRouter();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [cookies, setCookie] = useCookies(["olimpialewinska-theme"]);
-
-  const createQueryString = useCallback((path: string, value: string) => {
-    const langCodePattern = /^\/[a-z]{2}/;
-    const newPath = path.replace(langCodePattern, `/${value}`);
-    return newPath;
-  }, []);
 
   const handleLanguageChange = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {

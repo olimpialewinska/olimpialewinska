@@ -12,9 +12,11 @@ import {
 import { store } from "@/stores";
 import { useTranslation } from "@/app/i18n/client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
 import { SettingsElement } from "./Settings";
+import { createQueryString } from "@/utils/functions/createURL";
+import { useCookies } from "react-cookie";
 
 const navigationItems = [
   {
@@ -35,13 +37,18 @@ const navigationItems = [
 ];
 
 export const Navbar = observer(() => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const pathname = usePathname();
   const language = store.language.currentLanguage;
   const { t } = useTranslation(store.language.currentLanguage, "navbar");
+  const [cookies, setCookie] = useCookies(["olimpialewinska-theme"]);
 
   const handleScroll = () => {
+    if (isOpen) {
+      return;
+    }
     const currentScrollY = window.scrollY;
 
     if (currentScrollY < 50) {
@@ -53,6 +60,27 @@ export const Navbar = observer(() => {
       setVisible(false);
       return;
     }
+  };
+
+  const handleLanguageChange = () => {
+    let newPath = "";
+    if (store.language.currentLanguage === "en") {
+      store.language.setLanguage("pl");
+      newPath = createQueryString(window.location.pathname, "pl");
+    } else {
+      store.language.setLanguage("en");
+      newPath = createQueryString(window.location.pathname, "en");
+    }
+
+    window.location.replace(newPath);
+  };
+
+  const handleThemeChange = () => {
+    const theme = store.theme.currentTheme === "dark" ? "light" : "dark";
+    store.theme.setTheme(theme);
+    setCookie("olimpialewinska-theme", theme, {
+      path: "/",
+    });
   };
 
   useEffect(() => {
@@ -124,6 +152,41 @@ export const Navbar = observer(() => {
         ))}
 
         <div style={{ flex: 1 }}></div>
+        <MobileItem
+          onClick={() => {
+            handleLanguageChange();
+          }}
+          style={{
+            color:
+              store.theme.currentTheme === "dark"
+                ? "rgba(255,255,255, 0.6)"
+                : "rgba(0,0,0, 0.6)",
+            marginBottom: -10,
+          }}
+        >
+          {language === "pl" ? "EN" : "PL"}
+        </MobileItem>
+
+        <MobileItem
+          onClick={() => {
+            handleThemeChange();
+          }}
+          style={{
+            color:
+              store.theme.currentTheme === "dark"
+                ? "rgba(255,255,255, 0.6)"
+                : "rgba(0,0,0, 0.6)",
+            marginBottom: 40,
+          }}
+        >
+          {store.theme.currentTheme === "dark"
+            ? store.language.currentLanguage === "pl"
+              ? "Jasny"
+              : "Light"
+            : store.language.currentLanguage === "en"
+            ? "Dark"
+            : "Ciemny"}
+        </MobileItem>
       </Mobile>
       <Icon
         onClick={() => setIsOpen(!isOpen)}
