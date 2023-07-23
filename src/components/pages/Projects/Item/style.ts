@@ -93,7 +93,6 @@ export const Buttons = styled.div`
   justify-content: center;
   font-size: 12px;
   flex-wrap: wrap;
-  transition: 0.2s all;
 `;
 
 export const Button = styled.div<{ theme: "dark" | "light" }>`
@@ -108,10 +107,8 @@ export const Button = styled.div<{ theme: "dark" | "light" }>`
 
   color: ${({ theme }) =>
     theme === "dark" ? "rgba(255, 255, 255, 0.4)" : "rgba(0, 0, 0, 0.5)"};
-
   margin: 0 4px;
   padding: 8px 12px;
-  transition: 0.2s background-color, 0.2s border;
-  cursor: pointer;
+  transition: 0.2s all;
   margin-top: 8px;
 `;
