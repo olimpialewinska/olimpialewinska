@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const IndexContainer = styled.div`
   display: flex;
   justify-content: center;
-  height: calc(100vh - 60px);
   perspective: 600px;
+  overflow: hidden;
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -24,6 +24,8 @@ export const IndexCard = styled.div`
     width: 100% !important;
     margin-top: 0 !important;
     padding: 50px !important;
+    height: calc(100vh - 60px) !important;
+    overflow-y: auto;
   }
 
   @media (max-width: 768px) {
@@ -34,8 +36,8 @@ export const IndexCard = styled.div`
 export const WrapperMain = styled.div`
   display: flex;
 
-  @media (max-width: 1024px) {
-    height: 60vh !important;
+  @media (min-width: 1024px) {
+    height: 480px;
   }
 `;
 
