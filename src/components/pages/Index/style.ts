@@ -2,12 +2,12 @@
 import styled from "styled-components";
 
 export const IndexContainer = styled.div`
-  margin-top: -60px;
   display: flex;
   justify-content: center;
+  height: calc(100vh - 60px);
   perspective: 600px;
 
-  @media (max-width: 786px) {
+  @media (max-width: 1024px) {
     width: 100%;
     height: calc(100vh - 60px);
     margin-top: 0;
@@ -20,9 +20,13 @@ export const IndexCard = styled.div`
   background: linear-gradient(#4776e6, #8e54e9);
   margin-top: 32px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100% !important;
     margin-top: 0 !important;
+    padding: 50px !important;
+  }
+
+  @media (max-width: 768px) {
     padding: 24px !important;
   }
 `;
@@ -47,6 +51,10 @@ export const Content = styled.div`
     z-index: 2;
     height: 10vh !important;
   }
+
+  @media (min-width: 768px) {
+    margin-top: -20px;
+  }
 `;
 
 export const ContentTitle = styled.h1`
@@ -61,6 +69,7 @@ export const ContentTitle = styled.h1`
 export const ContentDescription = styled.p`
   color: white;
   margin-top: 30px;
+  white-space: pre-wrap;
 
   @media (max-width: 1024px) {
     margin-top: 50px !important;

@@ -18,6 +18,8 @@ import {
 import { useLayoutEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import { Stack } from "./Stack";
+import { stack } from "./constants";
 
 export const Index = observer(() => {
   const [githubData, setGithubData] = useState(
@@ -53,6 +55,7 @@ export const Index = observer(() => {
             <Content>
               <ContentTitle>Olimpia Lewińska</ContentTitle>
               <ContentDescription>{t("about")}</ContentDescription>
+              <Stack stack={stack} />
               <Link
                 href={`/${store.language.currentLanguage}/projects`}
                 style={{ textDecoration: "none" }}

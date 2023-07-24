@@ -32,6 +32,7 @@ export const Slider = observer(({ images }: { images: string[] }) => {
           alt="project"
           layout="fill"
           objectFit="cover"
+          priority
         />
         <Next theme={store.theme.currentTheme} onClick={handleNext} />
         <Prev theme={store.theme.currentTheme} onClick={handlePrev} />

@@ -51,6 +51,7 @@ export const Card = observer((prop: CardProp) => {
         alt="project"
         layout="fill"
         objectFit="cover"
+        priority
       />
     </animated.div>
   );

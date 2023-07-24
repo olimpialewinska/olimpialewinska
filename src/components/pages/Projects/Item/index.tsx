@@ -38,6 +38,7 @@ export const Item = observer((props: RowProps) => {
           alt="project"
           layout="fill"
           objectFit="cover"
+          priority
         />
       </ImageContainer>
       <Wrapper>
