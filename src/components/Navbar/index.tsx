@@ -45,22 +45,21 @@ export const Navbar = observer(() => {
   const { t } = useTranslation(store.language.currentLanguage, "navbar");
   const [cookies, setCookie] = useCookies(["olimpialewinska-theme"]);
 
-  const handleScroll = () => {
-    if (isOpen) {
-      return;
-    }
-    const currentScrollY = window.scrollY;
+  const handleScroll = useCallback(() => {
+    if (!isOpen) {
+      const currentScrollY = window.scrollY;
 
-    if (currentScrollY < 50) {
-      setVisible(true);
-      return;
-    }
+      if (currentScrollY < 50) {
+        setVisible(true);
+        return;
+      }
 
-    if (currentScrollY > 50) {
-      setVisible(false);
-      return;
+      if (currentScrollY > 50) {
+        setVisible(false);
+        return;
+      }
     }
-  };
+  }, [isOpen]);
 
   const handleLanguageChange = () => {
     let newPath = "";
@@ -89,10 +88,19 @@ export const Navbar = observer(() => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isOpen]);
 
   return (
-    <Wrapper style={{ display: visible ? "" : "none" }}>
+    <Wrapper
+      style={{
+        display: visible ? "" : "none",
+        backgroundColor: isOpen
+          ? store.theme.currentTheme === "dark"
+            ? "#242526"
+            : "#fff"
+          : "",
+      }}
+    >
       <Link href={`/${store.language.currentLanguage}`}>
         <Logo
           style={{
@@ -151,7 +159,6 @@ export const Navbar = observer(() => {
           </Link>
         ))}
 
-        <div style={{ flex: 1 }}></div>
         <MobileItem
           onClick={() => {
             handleLanguageChange();
@@ -161,7 +168,7 @@ export const Navbar = observer(() => {
               store.theme.currentTheme === "dark"
                 ? "rgba(255,255,255, 0.6)"
                 : "rgba(0,0,0, 0.6)",
-            marginBottom: -10,
+            marginTop: 180,
           }}
         >
           {language === "pl" ? "EN" : "PL"}
@@ -176,7 +183,6 @@ export const Navbar = observer(() => {
               store.theme.currentTheme === "dark"
                 ? "rgba(255,255,255, 0.6)"
                 : "rgba(0,0,0, 0.6)",
-            marginBottom: 40,
           }}
         >
           {store.theme.currentTheme === "dark"
@@ -187,6 +193,7 @@ export const Navbar = observer(() => {
             ? "Dark"
             : "Ciemny"}
         </MobileItem>
+        <div style={{ flex: 1 }}></div>
       </Mobile>
       <Icon
         onClick={() => setIsOpen(!isOpen)}

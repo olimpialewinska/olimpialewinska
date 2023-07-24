@@ -1,5 +1,12 @@
 "use client";
-export const images = ["elernink.png", "chatlight.png", "olimpialewinska.png"];
+export const images = [
+  "elernink/1.png",
+  "elernink/2.png",
+  "elernink/3.png",
+  "elernink/4.png",
+  "elernink/5.png",
+  "elernink/6.png",
+];
 
 export const stack = [
   "Next.js",

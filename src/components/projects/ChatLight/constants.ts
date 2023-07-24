@@ -1,5 +1,5 @@
 "use client";
-export const images = ["elernink.png", "chatlight.png", "olimpialewinska.png"];
+export const images = ["chatlight/1.png", "chatlight/2.png", "chatlight/3.png"];
 
 export const stack = [
   "React",
