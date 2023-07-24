@@ -7,4 +7,12 @@ module.exports = {
   experimental: {
     serverActions: false,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+    ],
+  },
 };

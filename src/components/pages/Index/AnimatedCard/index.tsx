@@ -1,5 +1,6 @@
 "use client";
 import { observer } from "mobx-react-lite";
+import Image from "next/image";
 import React from "react";
 import { useSpring, animated } from "react-spring";
 
@@ -42,11 +43,15 @@ export const Card = observer((prop: CardProp) => {
         minWidth: prop.height,
         height: prop.height,
         borderRadius: prop.borderRadius,
-        backgroundImage: `url(https://avatars.githubusercontent.com/u/100933608?v=4)`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        overflow: "hidden",
       }}
-    />
+    >
+      <Image
+        src={`${prop.image}`}
+        alt="project"
+        layout="fill"
+        objectFit="cover"
+      />
+    </animated.div>
   );
 });

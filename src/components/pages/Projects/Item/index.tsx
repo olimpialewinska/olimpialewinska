@@ -1,9 +1,18 @@
 "use client";
 import { observer } from "mobx-react-lite";
-import { Row, Image, Text, Wrapper, Title, Buttons, Button } from "./style";
+import {
+  Row,
+  ImageContainer,
+  Text,
+  Wrapper,
+  Title,
+  Buttons,
+  Button,
+} from "./style";
 import { store } from "@/stores";
 import { useTranslation } from "@/app/i18n/client";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface RowProps {
   image?: string;
@@ -23,12 +32,14 @@ export const Item = observer((props: RowProps) => {
 
   return (
     <Row onClick={handleClick} theme={store.theme.currentTheme}>
-      <Image
-        alt="zdjęcie"
-        style={{
-          backgroundImage: `url(${props.image})`,
-        }}
-      />
+      <ImageContainer>
+        <Image
+          src={`/${props.image}`}
+          alt="project"
+          layout="fill"
+          objectFit="cover"
+        />
+      </ImageContainer>
       <Wrapper>
         <Title>{props.title}</Title>
         <Text theme={store.theme.currentTheme}>{t(`project-${props.id}`)}</Text>

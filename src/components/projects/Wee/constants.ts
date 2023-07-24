@@ -9,10 +9,11 @@ export const images = [
 
 export const stack = [
   "Next.js",
-  "React Native",
   "TypeScript",
+  "MobX",
   "Styled Components",
   "Supabase",
+  "Supabase Realtime",
 ];
 
 export const link = "https://wee-nine.vercel.app/";

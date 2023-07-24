@@ -30,7 +30,7 @@ export const Row = styled.div<{ theme: "dark" | "light" }>`
   }
 `;
 
-export const Image = styled.div<ImageProps>`
+export const ImageContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,6 +40,8 @@ export const Image = styled.div<ImageProps>`
   margin-right: 0;
   border-radius: 6px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
   @media (max-width: 768px) {
     min-height: 180px;
     min-width: 90%;

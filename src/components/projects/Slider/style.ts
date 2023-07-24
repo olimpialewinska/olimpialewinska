@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   padding-top: 56.25%;
 `;
 
-export const Image = styled.div`
+export const ImageContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -18,6 +18,7 @@ export const Image = styled.div`
   left: 40px;
   right: 40px;
   bottom: 40px;
+  overflow: hidden;
 
   @media (max-width: 512px) {
     left: 20px;

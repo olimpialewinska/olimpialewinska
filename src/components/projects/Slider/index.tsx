@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
-import { Wrapper, Image, Next, Prev } from "./style";
+import { Wrapper, ImageContainer, Next, Prev } from "./style";
 import { store } from "@/stores";
 import { observer } from "mobx-react-lite";
+import Image from "next/image";
 
 export const Slider = observer(({ images }: { images: string[] }) => {
   const [current, setCurrent] = useState(0);
@@ -25,14 +26,16 @@ export const Slider = observer(({ images }: { images: string[] }) => {
 
   return (
     <Wrapper className="slider">
-      <Image
-        style={{
-          backgroundImage: `url("/${images[current]}")`,
-        }}
-      >
+      <ImageContainer>
+        <Image
+          src={`/${images[current]}`}
+          alt="project"
+          layout="fill"
+          objectFit="cover"
+        />
         <Next theme={store.theme.currentTheme} onClick={handleNext} />
         <Prev theme={store.theme.currentTheme} onClick={handlePrev} />
-      </Image>
+      </ImageContainer>
     </Wrapper>
   );
 });
