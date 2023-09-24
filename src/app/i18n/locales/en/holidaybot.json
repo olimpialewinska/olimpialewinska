@@ -1,0 +1,12 @@
+{
+  "title": "HolidayBot",
+  "description": "The server, responsible for scraping vacation-related advertisements, sends relevant offers to users via email. Additionally, the front-end allows users to log in, browse all available offers, and adjust their preferences, which in turn affect the emails they receive.",
+  "features": [
+    "Offers scrapping",
+    "Sending emails to users based on user preferences",
+    "User authentication",
+    "Displaying offers to users",
+    "User preferences management",
+    "Filtering offers on page"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "title": "HolidayBot",
+  "description": "Serwer odpowiedzialny za zbieranie ogłoszeń wakacyjnych. Wysyła do użytkowników odpowiednie oferty za pośrednictwem emaila. Dodatkowo front-end pozwala użytkownikom zalogować się, przeglądać dostępne oferty i dostosować swoje preferencje, co z kolei wpływa na otrzymywane przez użytkowników emaile.",
+  "features": [
+    "Zbieranie ogłoszeń z różnych stron internetowych",
+    "Wysyłanie emaili z ofertami",
+    "Autoryzacja użytkowników",
+    "Wyświetlanie ofert na stronie",
+    "Zarządzanie preferencjami użytkowników",
+    "Filtrowanie i sortowanie ofert"
+  ]
+}
